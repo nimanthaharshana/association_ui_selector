@@ -5,6 +5,10 @@ require_once(TOOLKIT . '/class.jsonpage.php');
 Class contentExtensionAssociation_ui_selectorGet extends JSONPage
 {
 
+    public function getContext(){
+        return;
+    }
+
     public function view()
     {
         $entry_id = General::sanitize($_GET['entry_id']);
@@ -48,7 +52,7 @@ Class contentExtensionAssociation_ui_selectorGet extends JSONPage
             // Set data
             $this->_Result['entry']['value'] = $value;
             $this->_Result['entry']['section'] = $parent_section_handle;
-            $this->_Result['entry']['link'] = APPLICATION_URL . '/publish/' . $parent_section_handle . '/edit/' . $entry_id . '/';
+            $this->_Result['entry']['link'] = SYMPHONY_URL . '/publish/' . $parent_section_handle . '/edit/' . $entry_id . '/';
         }
 
         // Return results
